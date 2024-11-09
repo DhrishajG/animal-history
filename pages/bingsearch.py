@@ -1,7 +1,14 @@
 import requests
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from the .env file
+load_dotenv("../.env")  # You can omit the path if .env is in the same directory
+
+api_key = os.getenv("BING_SEARCH_API_KEY")
 
 # Set up your API key and endpoint
-api_key = "2df1772f2bde44648cf075c84cb2d80e"
+
 search_term = "ducati"
 
 # Base URL for Bing Web Search
