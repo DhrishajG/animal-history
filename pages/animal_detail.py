@@ -1,10 +1,10 @@
 # this is where the animal details will be displayed
-from dotenv import load_dotenv
-import streamlit as st
-import json
 import os
-
+import json
+import streamlit as st
+from dotenv import load_dotenv
 from animal_evolution_agent import AnimalEvolutionAgent
+
 load_dotenv("../.env")
 open_api_key = os.getenv("OPEN_API_KEY")
 
