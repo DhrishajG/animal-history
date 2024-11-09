@@ -1,10 +1,12 @@
 # this is where the animal details will be displayed
+from dotenv import load_dotenv
 import streamlit as st
 import json
+import os
 
 from animal_evolution_agent import AnimalEvolutionAgent
-
-open_api_key = ""
+load_dotenv("../.env")
+open_api_key = os.getenv("OPEN_API_KEY")
 
 # Prompt for animal name using Streamlit's text input
 animal_name = st.text_input("Enter Animal Name:")
