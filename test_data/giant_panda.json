@@ -1,6 +1,20 @@
 {
-    "name": "Giant Panda",
-    "description": "The modern giant panda, Ailuropoda melanoleuca, is an iconic bear with its distinctive black-and-white fur, powerful jaws, and a specialized thumb-like wrist bone. Native to the mountainous bamboo forests of central China, it has evolved unique adaptations for a near-exclusive bamboo diet, including strong molars and an elongated digestive tract suited for processing plant material. Despite these herbivorous traits, the giant panda belongs to the bear family, Ursidae, and shares common ancestry with omnivorous bears, making its dietary specialization a rare example of evolutionary adaptation.",
-    "stage": 0,
-    "imageUrl": "https://static.wikia.nocookie.net/dinosaurs/images/c/c1/Grosser_Panda.jpg/revision/latest?cb=20170102011855"
+    "Giant Panda" : {
+        "description": "The modern giant panda, Ailuropoda melanoleuca, is an iconic bear with its distinctive black-and-white fur, powerful jaws, and a specialized thumb-like wrist bone. Native to the mountainous bamboo forests of central China, it has evolved unique adaptations for a near-exclusive bamboo diet, including strong molars and an elongated digestive tract suited for processing plant material. Despite these herbivorous traits, the giant panda belongs to the bear family, Ursidae, and shares common ancestry with omnivorous bears, making its dietary specialization a rare example of evolutionary adaptation.",
+        "stage": 0,
+        "imageUrl": "https://static.wikia.nocookie.net/dinosaurs/images/c/c1/Grosser_Panda.jpg/revision/latest?cb=20170102011855.jpg",
+        "prompt": "Giant Panda"
+    },
+    "Ailuropoda baconi": {
+        "description": "Closest relative to today’s giant panda, sharing its bamboo diet and thumb-like wrist bones. Fossils show it was widespread in southern China, resembling the modern panda but slightly smaller.",
+        "stage": 1,
+        "imageUrl": "https://static.wikia.nocookie.net/dinosaurs/images/1/11/The_big_fat_panda_by_hodarinundu-d716cej.jpg/revision/latest?cb=20170102010516.jpg",
+        "prompt": "Illustration of an ancient bear, Ailuropoda baconi, similar in appearance to a modern giant panda but slightly smaller and leaner, eating bamboo in a lush, forested environment typical of the Pleistocene era in southern China."
+    },
+    "Kretzoiarctos beatrix": {
+        "description": "A small bear found in Spain, this ancestor shows early bear-panda characteristics with a partially developed pseudo-thumb. It represents one of the earliest steps toward panda specialization.",
+        "stage": 2,
+        "imageUrl": "https://static.wikia.nocookie.net/dinosaurs/images/3/3c/Illustration_of_Kretzoiarctos_beatrix.png/revision/latest?cb=20200629060932.jpg",
+        "prompt": "Illustration of Kretzoiarctos beatrix, an ancient small bear with a blend of panda and bear features, including a partially developed pseudo-thumb, in a Miocene forest of Europe. The bear has a compact, agile build and is surrounded by lush foliage."
+    }
 }
