@@ -50,8 +50,10 @@ if st.session_state.animal_data:
     st.write("**Description:**", selected_stage_data["description"])
     
     # Display the image if available
-    if "imageUrl" in selected_stage_data:
+    imgUrl = "https://i.pinimg.com/564x/3a/1d/a3/3a1da35d96a40c0c87564acb18508989.jpg" # placeholder
+
+    if imgUrl:
         st.image(
-            selected_stage_data["imageUrl"],
+            imgUrl,
             caption=f"{stage} illustration"
         )
