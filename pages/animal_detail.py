@@ -21,7 +21,7 @@ def get_evolution_stage_image_bing_search(animal_name, stage_name, description):
     # Set up your API key and endpoint
     image_search_url = "https://api.bing.microsoft.com/v7.0/images/search"
     headers = {"Ocp-Apim-Subscription-Key": api_key}
-    params = {"q": search_term, "count": 5}  # Adjust count as needed
+    params = {"q": search_term, "count":1}  # Adjust count as needed
     
     try:
         # Perform an image search to get image URLs
@@ -124,11 +124,7 @@ if st.session_state.animal_data:
     for i in range(10):
         mood_rect_color = "red" if i * 10 < mood_level else "gray"  # Colors depending on mood level
         st.markdown(f'<div style="width: 80px; height: 20px; background-color: {mood_rect_color}; display: inline-block; margin-right: 5px;"></div>', unsafe_allow_html=True)
-    
-    st.write(f"\nCurrent Mood Level: {mood_level}/100")
-
-
-    
+        
     # Retrieve preloaded image URLs from session state for the selected stage
     # img_urls = st.session_state.animal_images.get(animal_name, {}).get(stage)
     #dummy img_urls
