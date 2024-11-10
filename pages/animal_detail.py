@@ -5,6 +5,8 @@ import streamlit as st
 from dotenv import load_dotenv
 from animal_evolution_agent import AnimalEvolutionAgent
 import pydeck as pdk
+import plotly.express as px
+
 
 # Function to get animal image from Bing search based on evolutionary stage (now cached)
 @st.cache_data
@@ -72,9 +74,12 @@ if animal_name and animal_name != st.session_state.prev_animal_name:
             # Preload images for each evolutionary stage
             images = {}
             for stage, stage_data in st.session_state.animal_data.items():
-                img_urls = get_evolution_stage_image_bing_search(
-                    animal_name, stage, stage_data["description"]
-                )
+                # img_urls = get_evolution_stage_image_bing_search(
+                #     animal_name, stage, stage_data["description"]
+                # )
+                #dummy img_urls
+                img_urls = "https://via.placeholder.com/1024x512?text=No+Image+Available"
+
                 if img_urls:
                     images[stage] = img_urls[0]  # Save the first image for each stage
             st.session_state.animal_images[animal_name] = images
@@ -98,6 +103,7 @@ if st.session_state.animal_data:
     # Retrieve data for the selected stage
     selected_stage_data = data[stage]
     
+    print(selected_stage_data)
     # Display selected evolution stage details
     st.write("**Evolution Stage:**", stage)
     st.write("**Description:**", selected_stage_data["description"])
@@ -106,9 +112,27 @@ if st.session_state.animal_data:
     st.write("**Extinction Story:**", selected_stage_data["extinction_story"])
     st.write("**Year of Extinction:**", selected_stage_data["year_of_extinction"])
     st.write("**Population:**", selected_stage_data["population"])
+
+    mood_level = int(selected_stage_data["number_mood"])
+    # Visualizing mood with a color scale and a gauge
+     # Create a bar of 10 rectangles to represent mood
+    mood_color = "red" if mood_level > 70 else "green" if mood_level < 40 else "yellow"
+    
+    st.write(f"**Mood Level Visualization:**")
+
+    # Create 10 rectangles to represent mood level (out of 100)
+    for i in range(10):
+        mood_rect_color = "red" if i * 10 < mood_level else "gray"  # Colors depending on mood level
+        st.markdown(f'<div style="width: 80px; height: 20px; background-color: {mood_rect_color}; display: inline-block; margin-right: 5px;"></div>', unsafe_allow_html=True)
+    
+    st.write(f"\nCurrent Mood Level: {mood_level}/100")
+
+
     
     # Retrieve preloaded image URLs from session state for the selected stage
-    img_urls = st.session_state.animal_images.get(animal_name, {}).get(stage)
+    # img_urls = st.session_state.animal_images.get(animal_name, {}).get(stage)
+    #dummy img_urls
+    img_urls = "https://via.placeholder.com/1024x512?text=No+Image+Available"
 
     if img_urls:
         # Display the preloaded image
