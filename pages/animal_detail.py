@@ -80,7 +80,8 @@ if animal_name and animal_name != st.session_state.prev_animal_name:
             st.session_state.animal_images[animal_name] = images
 
     except json.JSONDecodeError as e:
-        st.error(f"Error parsing data: {e}")
+        st.error(animal_data)
+        print("Raw API response:", animal_data)
         st.stop()  # Stop further execution if JSON parsing fails
 
 # Check if animal data is available before proceeding
