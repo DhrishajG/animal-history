@@ -48,7 +48,7 @@ st.set_page_config(layout="wide")
 
 
 # Streamlit UI Setup
-st.header('Animal Evolution Stages')
+st.header('Tails of Time')
 
 # Prompt for animal name
 animal_name = st.text_input("Enter Animal Name:")
