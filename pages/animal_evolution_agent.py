@@ -36,7 +36,7 @@ class AnimalEvolutionAgent:
                   "ancient_names": "<scientific name of the previous species the current animal has evolved from>",
                   "year_of_extinction": "<the year when the animal went extinct, if it already hasn't, in the format '... years ago'>",
                   "population": "<the remaining population of current animal, if not extinct>",
-                  "country": "<a python list of countries the animal is native to. if it is a region, list out the names of the countries in that region. Do not list out the continent or the states, instead just specify the country.>"
+                  "country": "<a python list of countries the animal is native to. if it is a region, list out the names of the countries in that region. Do not list out the continent or the states, instead just specify the countries.>"
                   "number_mood": "<a number between 0-100 representing the mood of the animal>"
                   
             
