@@ -4,6 +4,8 @@ import requests
 import streamlit as st
 from dotenv import load_dotenv
 from animal_evolution_agent import AnimalEvolutionAgent
+
+from chatbot import AnimalChatbotAgent
 import pydeck as pdk
 import plotly.express as px
 
@@ -87,7 +89,7 @@ if animal_name and animal_name != st.session_state.prev_animal_name:
     except json.JSONDecodeError as e:
         st.error(animal_data)
         print("Raw API response:", animal_data)
-        st.stop()  # Stop further execution if JSON parsing fails
+        st.stop()  # Stop further execution if JSON parsing fails    
 
 # Check if animal data is available before proceeding
 if st.session_state.animal_data:
@@ -103,6 +105,76 @@ if st.session_state.animal_data:
     # Retrieve data for the selected stage
     selected_stage_data = data[stage]
     
+
+    # =============================
+    '''EXPERIMENTAL CHATBOT AREA'''
+
+    # Initialize chatbot agent with OpenAI API key
+    chatbot_agent = AnimalChatbotAgent(open_api_key)
+
+    # Chat button to open chat interface
+    if st.button(f"Chat with {stage} now"):
+        st.session_state.show_chat = True  # Toggle chat interface visibility
+        # Get initial story and set up chat history
+        animal_story = chatbot_agent.get_animal_contextual_story(stage, selected_stage_data["time_period"])
+        st.session_state.chat_history = [{"role": "assistant", "content": animal_story}]
+
+    # Check if the chat interface should be displayed
+    if st.session_state.get("show_chat", False):
+        # st.write(f"**Chat with {animal_name}**")
+
+        # # Display chat history
+        # for msg in st.session_state.chat_history:
+        #     role = "User" if msg["role"] == "user" else f"{animal_name} (Chatbot)"
+        #     st.write(f"**{role}:** {msg['content']}")
+
+        # # Input box for user to enter a message
+        # user_message = st.text_input("Type your message:", key="chat_input")
+
+        # # Handle the 'Send' button and add logic to manage message input and response
+        # if st.button("Send") and user_message:
+        #     # Add user message to chat history
+        #     st.session_state.chat_history.append({"role": "user", "content": user_message})
+
+        #     # Get the chatbot's response based on the current conversation
+        #     agent_response = chatbot_agent.continue_conversation(stage, selected_stage_data["time_period"], user_message)
+        #     st.session_state.chat_history.append({"role": "assistant", "content": agent_response})
+
+        # Use an expander to create a minimizable chat window
+        with st.expander(f"Chat with {animal_name} ({stage} stage)", expanded=True):
+        
+            # if 'something' not in st.session_state:
+            #     st.session_state.something = ''
+
+            # def submit():
+            #     st.session_state.something = st.session_state.chat_input
+            #     st.session_state.chat_input = ''
+
+            # Display chat history
+            for msg in st.session_state.chat_history:
+                role = "User" if msg["role"] == "user" else f"{animal_name} (Chatbot)"
+                st.write(f"**{role}:** {msg['content']}")
+
+            # Input box for user to enter a message
+            # user_message = st.text_input("Type your message:", key="chat_input", on_change=submit)
+            user_message = st.text_input("Type your message:", key="chat_input")
+
+
+            # Handle the 'Send' button and add logic to manage message input and response
+            if st.button("Send"):
+                # Add user message to chat history
+                print(f"User Message: {user_message}")
+                st.session_state.chat_history.append({"role": "user", "content": user_message})
+
+                # Get the chatbot's response based on the current conversation
+                agent_response = chatbot_agent.continue_conversation(stage, selected_stage_data["time_period"], user_message)
+                st.session_state.chat_history.append({"role": "assistant", "content": agent_response})
+
+
+
+
+
+# =============================
     print(selected_stage_data)
     # Display selected evolution stage details
     st.write("**Evolution Stage:**", stage)
