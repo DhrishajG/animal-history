@@ -44,7 +44,7 @@ class AnimalEvolutionAgent:
          The emotional state of the animal should shift as it moves through time, showing the gradual awareness of extinction. This should be a personal, first-person narrative from the animal's perspective. You are creating an emotional connection between the user and the animal, bringing awareness to their extinction in a deeply personal way.
          If the animal is not extinct, dont predict the future. 
 
-         Return this as a JSON object. There should be exactly 5 keys in this JSON object. Do not return anything other than the JSON Object, except when you are trying to return a funny response.
+         Return this as a JSON object. There should be exactly 5 keys in this JSON object. 
          """
 
       )
