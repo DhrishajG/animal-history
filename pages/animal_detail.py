@@ -81,11 +81,9 @@ if animal_name and animal_name != st.session_state.prev_animal_name:
             # Preload images for each evolutionary stage
             images = {}
             for stage, stage_data in st.session_state.animal_data.items():
-                # img_urls = get_evolution_stage_image_bing_search(
-                #     animal_name, stage, stage_data["description"]
-                # )
-                #dummy img_urls
-                img_urls = "https://via.placeholder.com/1024x512?text=No+Image+Available"
+                img_urls = get_evolution_stage_image_bing_search(
+                    animal_name, stage, stage_data["description"]
+                )
 
                 if img_urls:
                     images[stage] = img_urls[0]  # Save the first image for each stage
@@ -143,9 +141,7 @@ if st.session_state.animal_data:
     
     with col2: 
         # Retrieve preloaded image URLs from session state for the selected stage
-        # img_urls = st.session_state.animal_images.get(animal_name, {}).get(stage)
-        #dummy img_urls
-        img_urls = "https://via.placeholder.com/1024x512?text=No+Image+Available"
+        img_urls = st.session_state.animal_images.get(animal_name, {}).get(stage)
 
         if img_urls:
             # Display the preloaded image
