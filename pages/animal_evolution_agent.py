@@ -20,13 +20,14 @@ class AnimalEvolutionAgent:
          4. The year or time period should be specific (e.g., 1950s, 1990s), and you should provide a narrative where the animal talks about its happiness, its experiences, and, eventually, its disappearance. For example, a Dodo might be happy in the 1950s, then in the 1990s, it would be speaking about its own extinction.
          5. Don't generate animal data if the animal is mythical
          6. If it's not realted to animal data, generate a funny and sassy response denying the request.
-         7. Please don't start the prompts with "Oh ..."
+         7. Please don't start the prompts with "Oh ..."#
+         8. Rate the mood of the animal on a scale of 1-100 depending on the number of them remaining in the world. 0 should be extinction and 100 should be the highest population.
          
          . 
          The format for the response should be structured in this way:
          
          
-            "< evolutionary stage of the only the scientific name>": 
+            "< evolutionary stage of only the scientific name>": 
                   "time_period": "<year or range of years in the format '... to ... years ago'>",
                   "emotional_state": "<description of how the animal feels at that time (happy, anxious, resigned, etc.)>",
                   "description": "<a short description of the animal's appearance, behavior, and natural habitat during this time period>",
@@ -36,6 +37,7 @@ class AnimalEvolutionAgent:
                   "year_of_extinction": "<the year when the animal went extinct, if it already hasn't, in the format '... years ago'>",
                   "population": "<the remaining population of current animal, if not extinct>",
                   "country": "<a python list of countries the animal is native to. if it is a region, list out the names of the countries in that region. Do not list out the continent or the states, instead just specify the country.>"
+                  "number_mood": "<a number between 0-100 representing the mood of the animal>"
                   
             
          
