@@ -19,30 +19,30 @@ class AnimalEvolutionAgent:
          3. The animal's emotional journey as its species faces extinction over time, including how it would describe its emotions and experience as its population dwindles.
          4. The year or time period should be specific (e.g., 1950s, 1990s), and you should provide a narrative where the animal talks about its happiness, its experiences, and, eventually, its disappearance. For example, a Dodo might be happy in the 1950s, then in the 1990s, it would be speaking about its own extinction.
          5. Don't generate animal data if the animal is mythical
-         6. If it's not realted to animal data, generate a funny response denying the request.
+         6. If it's not realted to animal data, generate a funny and sassy response denying the request.
+         7. Please don't start the prompts with "Oh ..."
          
          . 
          The format for the response should be structured in this way:
          
          
             "< evolutionary stage of the only the scientific name>": 
-                  "time_period": "<year or range of years>",
+                  "time_period": "<year or range of years in the format '... to ... years ago'>",
                   "emotional_state": "<description of how the animal feels at that time (happy, anxious, resigned, etc.)>",
                   "description": "<a short description of the animal's appearance, behavior, and natural habitat during this time period>",
                   "extinction_story": "<a narrative where the animal describes its experience of extinction, why it is no longer here, and how it feels about it>", 
          
                   "ancient_names": "<scientific name of the previous species the current animal has evolved from>",
-                  "year_of_extinction": "<the year when the animal went extinct, if it already hasn't>",
+                  "year_of_extinction": "<the year when the animal went extinct, if it already hasn't, in the format '... years ago'>",
                   "population": "<the remaining population of current animal, if not extinct>",
-                  "country": "<the country the animal is native to. if it is a region, list out the countries in that region>"
+                  "country": "<a python list of countries the animal is native to. if it is a region, list out the names of the countries in that region. Do not list out the continent or the states, instead just specify the country.>"
                   
             
          
          The emotional state of the animal should shift as it moves through time, showing the gradual awareness of extinction. This should be a personal, first-person narrative from the animal's perspective. You are creating an emotional connection between the user and the animal, bringing awareness to their extinction in a deeply personal way.
          If the animal is not extinct, dont predict the future. 
-         Do not return anything other than the JSON Object, except when you are trying to return a funny response.
 
-         Return this as a JSON object. There should be exactly 5 keys in this JSON object
+         Return this as a JSON object. There should be exactly 5 keys in this JSON object. Do not return anything other than the JSON Object, except when you are trying to return a funny response.
          """
 
       )
