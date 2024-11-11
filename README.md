@@ -32,3 +32,9 @@ streamlit run animal_detail.py
 Follow this link for a video demo: https://youtu.be/7Prd-75QtUM
 
 Have fun learning! 🐼
+
+## Contributors
+- https://www.linkedin.com/in/dhrishaj-garg
+- https://linkedin.com/in/nikitha-anbuchitra-shanmugasundaram-228008219
+- https://www.linkedin.com/in/tuan-chuong-goh
+- https://www.linkedin.com/in/ribhavojha
