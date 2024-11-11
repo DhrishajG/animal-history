@@ -15,6 +15,7 @@ The following set of API Keys are needed for the project:
 - `BING_SEARCH_API_KEY`
 - `BING_AI_API_KEY`
 - `AZURE_OPENAI_API_KEY`
+
 Create a `.env` file in the root folder of this directory for the program to be able to read these API keys
 
 ## How to run the program
